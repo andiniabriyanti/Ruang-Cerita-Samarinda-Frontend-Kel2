@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Ruang Cerita</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <div class="login-box">
+    <h1>Masuk ke Ruang Cerita</h1>
+    <p>Silakan login untuk mulai berbagi cerita.</p>
+    <form class="login-form" id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Mencegah form melakukan refresh
+
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username && email && password) {
+        // Jika semua input terisi, arahkan ke halaman galeri cerita
+        alert(`Selamat datang, ${username}! Anda akan diarahkan ke Galeri Cerita.`);
+        window.location.href = "RuangCeritaSamarinda.code/galericerita.html"; 
+      } else {
+        // Jika ada kolom yang kosong
+        alert("Semua kolom harus diisi untuk login.");
+      }
+    });
+  </script>
+</body>
+</html>
